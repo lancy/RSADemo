@@ -18,6 +18,11 @@
 		BF2F80901727AB390067D0DB /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF2F808F1727AB390067D0DB /* Default-568h@2x.png */; };
 		BF2F80931727AB390067D0DB /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF2F80911727AB390067D0DB /* MainStoryboard.storyboard */; };
 		BF2F80961727AB390067D0DB /* GLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2F80951727AB390067D0DB /* GLViewController.m */; };
+		BF2F80A41727AB970067D0DB /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2F809D1727AB5B0067D0DB /* Base64.m */; };
+		BF2F80A51727AB980067D0DB /* CryptoUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2F809F1727AB5B0067D0DB /* CryptoUtil.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		BF2F80A61727AB980067D0DB /* KeychainUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2F80A11727AB5B0067D0DB /* KeychainUtil.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		BF2F80A81727ABB90067D0DB /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF2F80A71727ABB90067D0DB /* Security.framework */; };
+		BF2F80AA1727AC960067D0DB /* key.txt in Resources */ = {isa = PBXBuildFile; fileRef = BF2F80A91727AC960067D0DB /* key.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +42,14 @@
 		BF2F80921727AB390067D0DB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		BF2F80941727AB390067D0DB /* GLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLViewController.h; sourceTree = "<group>"; };
 		BF2F80951727AB390067D0DB /* GLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GLViewController.m; sourceTree = "<group>"; };
+		BF2F809C1727AB5B0067D0DB /* Base64.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
+		BF2F809D1727AB5B0067D0DB /* Base64.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Base64.m; sourceTree = "<group>"; };
+		BF2F809E1727AB5B0067D0DB /* CryptoUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CryptoUtil.h; sourceTree = "<group>"; };
+		BF2F809F1727AB5B0067D0DB /* CryptoUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CryptoUtil.m; sourceTree = "<group>"; };
+		BF2F80A01727AB5B0067D0DB /* KeychainUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeychainUtil.h; sourceTree = "<group>"; };
+		BF2F80A11727AB5B0067D0DB /* KeychainUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeychainUtil.m; sourceTree = "<group>"; };
+		BF2F80A71727ABB90067D0DB /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		BF2F80A91727AC960067D0DB /* key.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = key.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF2F80A81727ABB90067D0DB /* Security.framework in Frameworks */,
 				BF2F807A1727AB390067D0DB /* UIKit.framework in Frameworks */,
 				BF2F807C1727AB390067D0DB /* Foundation.framework in Frameworks */,
 				BF2F807E1727AB390067D0DB /* CoreGraphics.framework in Frameworks */,
@@ -56,6 +70,8 @@
 		BF2F806D1727AB390067D0DB = {
 			isa = PBXGroup;
 			children = (
+				BF2F80A71727ABB90067D0DB /* Security.framework */,
+				BF2F80A31727AB630067D0DB /* Security */,
 				BF2F807F1727AB390067D0DB /* RSADemo */,
 				BF2F80781727AB390067D0DB /* Frameworks */,
 				BF2F80771727AB390067D0DB /* Products */,
@@ -96,6 +112,7 @@
 		BF2F80801727AB390067D0DB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BF2F80A91727AC960067D0DB /* key.txt */,
 				BF2F80811727AB390067D0DB /* RSADemo-Info.plist */,
 				BF2F80821727AB390067D0DB /* InfoPlist.strings */,
 				BF2F80851727AB390067D0DB /* main.m */,
@@ -105,6 +122,19 @@
 				BF2F808F1727AB390067D0DB /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BF2F80A31727AB630067D0DB /* Security */ = {
+			isa = PBXGroup;
+			children = (
+				BF2F809C1727AB5B0067D0DB /* Base64.h */,
+				BF2F809D1727AB5B0067D0DB /* Base64.m */,
+				BF2F809E1727AB5B0067D0DB /* CryptoUtil.h */,
+				BF2F809F1727AB5B0067D0DB /* CryptoUtil.m */,
+				BF2F80A01727AB5B0067D0DB /* KeychainUtil.h */,
+				BF2F80A11727AB5B0067D0DB /* KeychainUtil.m */,
+			);
+			name = Security;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +194,7 @@
 				BF2F808E1727AB390067D0DB /* Default@2x.png in Resources */,
 				BF2F80901727AB390067D0DB /* Default-568h@2x.png in Resources */,
 				BF2F80931727AB390067D0DB /* MainStoryboard.storyboard in Resources */,
+				BF2F80AA1727AC960067D0DB /* key.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,6 +205,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF2F80A41727AB970067D0DB /* Base64.m in Sources */,
+				BF2F80A51727AB980067D0DB /* CryptoUtil.m in Sources */,
+				BF2F80A61727AB980067D0DB /* KeychainUtil.m in Sources */,
 				BF2F80861727AB390067D0DB /* main.m in Sources */,
 				BF2F808A1727AB390067D0DB /* GLAppDelegate.m in Sources */,
 				BF2F80961727AB390067D0DB /* GLViewController.m in Sources */,
